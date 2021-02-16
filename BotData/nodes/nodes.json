@@ -1,0 +1,292 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        }
+      ],
+      "x": 138,
+      "y": 188
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "sahelp",
+          "value": "Shows this menu",
+          "inline": "true"
+        },
+        {
+          "name": "say",
+          "value": "Say what you type after the command. example YOU: !say Hello There BOT WILL RESPOND WITH: Hello There",
+          "inline": "true"
+        },
+        {
+          "name": "sayembed",
+          "value": "Say what you type after the command in embed",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 345,
+      "y": 182,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "1FFF57",
+        "SayBot help menu",
+        "",
+        "SB github template by P33t",
+        "",
+        "",
+        "This is the embed description, replace this with some info about your bot!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "y",
+      "guid": "ac9fc6c0-32dd-42ce-b750-33e4484b2716",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "90558e55-9264-47b6-935c-a52197ee17f9"
+          ]
+        }
+      ],
+      "x": 116,
+      "y": 342,
+      "perms": []
+    },
+    {
+      "type": "command",
+      "name": "yembed",
+      "guid": "cb7e6b4e-9332-480d-a62e-649101b69292",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "c0f64370-43c0-4b8e-8160-3e4e25904be2"
+          ]
+        }
+      ],
+      "x": 99,
+      "y": 491,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "save what user said",
+      "guid": "90558e55-9264-47b6-935c-a52197ee17f9",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "say",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "6b1b8004-f7b7-4f82-9c19-1427532daa6a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ac9fc6c0-32dd-42ce-b750-33e4484b2716"
+        }
+      ],
+      "x": 310,
+      "y": 344,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "say",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "say what user wanted",
+      "guid": "6b1b8004-f7b7-4f82-9c19-1427532daa6a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "90558e55-9264-47b6-935c-a52197ee17f9"
+        }
+      ],
+      "x": 485,
+      "y": 347,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "${tempVars.say}",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "save what user said_1",
+      "guid": "c0f64370-43c0-4b8e-8160-3e4e25904be2",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "sayembeded",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "16f9b55c-192a-4436-8d93-dd55ab339077"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "cb7e6b4e-9332-480d-a62e-649101b69292"
+        }
+      ],
+      "x": 292,
+      "y": 503,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "sayembeded",
+        "Text",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "say what user wanted with embed",
+      "guid": "16f9b55c-192a-4436-8d93-dd55ab339077",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c0f64370-43c0-4b8e-8160-3e4e25904be2"
+        }
+      ],
+      "x": 483,
+      "y": 503,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "52FF4D",
+        ":${dbsVars.CommandAuthor.displayName} wanted to say:",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.sayembeded}",
+        "",
+        "",
+        "by itsP33t on github :)",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    }
+  ]
+}
