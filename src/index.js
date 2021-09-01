@@ -13,3 +13,4 @@ const client = new Client();
   await client.login(config.token);
 })();
 
+// please do not put any commands here. Commands are in /commands/general/
